@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Pendaftaran Peserta</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="container">
+        <header class="page-header">
+            <div>
+                <p class="eyebrow">Fase 1</p>
+                <h1>Data Peserta</h1>
+                <p class="subtitle">Kelola pendaftaran peserta secara langsung.</p>
+            </div>
+            <span class="storage-badge">Tersimpan di perangkat ini</span>
+        </header>
+
+        <section class="panel form-panel" aria-labelledby="form-title">
+            <div class="section-heading">
+                <div>
+                    <h2 id="form-title">Tambah Peserta</h2>
+                    <p id="form-description">Isi formulir untuk mendaftarkan peserta baru.</p>
+                </div>
+            </div>
+            <form id="registration-form">
+                <input type="hidden" id="participant-id">
+                <div class="form-grid">
+                    <label>
+                        Nama Lengkap
+                        <input type="text" id="nama" required autocomplete="name">
+                    </label>
+                    <label>
+                        Email
+                        <input type="email" id="email" required autocomplete="email">
+                    </label>
+                    <label>
+                        Nomor Telepon
+                        <input type="tel" id="telepon" required autocomplete="tel">
+                    </label>
+                    <label>
+                        Jurusan
+                        <input type="text" id="jurusan" required>
+                    </label>
+                    <label>
+                        Kelas
+                        <select id="kelas">
+                            <option value="X">X</option>
+                            <option value="XI">XI</option>
+                            <option value="XII">XII</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="button button-primary" id="submit-button">Tambah Peserta</button>
+                    <button type="button" class="button button-secondary hidden" id="cancel-button">Batal Edit</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="panel" aria-labelledby="table-title">
+            <div class="section-heading table-heading">
+                <div>
+                    <h2 id="table-title">Daftar Peserta</h2>
+                    <p>Seluruh data yang tersimpan di localStorage.</p>
+                </div>
+                <span class="count" id="participant-count">0 peserta</span>
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>Email</th>
+                            <th>Telepon</th>
+                            <th>Jurusan</th>
+                            <th>Kelas</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="participant-table-body"></tbody>
+                </table>
+                <p class="empty-state" id="empty-state">Belum ada data peserta.</p>
+            </div>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>
